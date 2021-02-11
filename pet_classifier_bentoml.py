@@ -6,19 +6,6 @@ from keras.preprocessing import image
 from PIL import Image
 
 
-# @env(pip_packages=['fastai'])
-# @artifacts([Fastai1ModelArtifact('pet_classifer')])
-# class PetClassifier(BentoService):
-
-#     @api(input=ImageInput(), batch=False)
-#     def predict(self, image):
-#         fastai_image = pil2tensor(image, np.float32)
-#         fastai_image = Image(fastai_image)
-#         result = self.artifacts.pet_classifer.predict(image)
-#         return str(result)
-CLASS_NAMES = ["cat", "dog"]
-
-
 @bentoml.env(infer_pip_packages=True)
 @bentoml.artifacts([KerasModelArtifact("model")])
 class PetClassifier(bentoml.BentoService):
