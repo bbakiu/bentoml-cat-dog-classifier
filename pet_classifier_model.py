@@ -9,6 +9,10 @@ from keras.preprocessing.image import ImageDataGenerator
 from pet_classifier_bentoml import PetClassifier
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2082fcc019813fa1fa7a9a01650c22317285da93
 train_dir = "PetImages/train"
 validation_dir = "PetImages/validation"
 train_cats_dir = "PetImages/train/cats"
