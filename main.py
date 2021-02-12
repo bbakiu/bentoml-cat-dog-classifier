@@ -3,8 +3,8 @@ from sklearn import datasets
 
 from iris_classifier import IrisClassifier
 
-if __name__ ==  "__main__":
-    # Load training data
+if __name__ == "__main__":
+    # Load training data from csv
     iris = datasets.load_iris()
     X, y = iris.data, iris.target
 
