@@ -33,4 +33,5 @@ for d in subdir_list:  # iterate through the sub directories train and test
                         os.remove(fpath)
                         bad_list.append(fpath)
 
+print("List of bad files\n")
 print(bad_list)
