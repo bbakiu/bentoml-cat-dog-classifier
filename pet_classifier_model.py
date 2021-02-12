@@ -8,11 +8,6 @@ import os, shutil
 from keras.preprocessing.image import ImageDataGenerator
 from pet_classifier_bentoml import PetClassifier
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 2082fcc019813fa1fa7a9a01650c22317285da93
 train_dir = "PetImages/train"
 validation_dir = "PetImages/validation"
 train_cats_dir = "PetImages/train/cats"
@@ -43,16 +38,6 @@ datagen = ImageDataGenerator(
     horizontal_flip=True,
     fill_mode="nearest",
 )
-
-# # The .flow() command below generates batches of randomly transformed images.
-# # It will loop indefinitely, so we need to `break` the loop at some point!
-# i = 0
-# for batch in datagen.flow(x, batch_size=1):
-#     plt.figure(i)
-#     imgplot = plt.imshow(image.array_to_img(batch[0]))
-#     i += 1
-#     if i % 4 == 0:
-#         break
 
 model = models.Sequential()
 model.add(layers.Conv2D(32, (3, 3), activation="relu", input_shape=(150, 150, 3)))
@@ -113,5 +98,3 @@ model.save("cats_and_dogs_small_2.h5")
 service = PetClassifier()
 service.pack("model", model)
 saved_path = service.save()
-
-# split_data_set()
