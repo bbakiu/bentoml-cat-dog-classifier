@@ -13,7 +13,8 @@ PetImages
 and put in there the dataset.
 
 ### Create test, train and validation data sets
-Run `python create_test_train_dir.py` to create the data sets.
+First run `python find_and_delete_broken_images.py` to delete any broken images in your dataset.
+Run `python create_test_train_validation_dir.py` to create the test, train and validations datasets.
 
 ### Build the model and attach it to a BentoML service:
 Run `python pet_classifier_model.py` to build the CNN model and attach it to BentoML service.
@@ -23,4 +24,4 @@ Run `bentoml serve PetClassifier:latest` to serve the service locally on port 50
 
 ## Credits:
 1. https://github.com/abaranovskis-redsamurai/automation-repo/tree/master/convnet - source I used for the model
-2. `find_broken_images.py` was found somewhere in the internet, and I no longer can find the real source. Kudos to the person who wrote that piece of code.
+2. `find_and_delete_broken_images.py` was found somewhere in the internet, and I no longer can find the real source. Kudos to the person who wrote that piece of code. There are some slight modifications from my side there to make it cleaner.
