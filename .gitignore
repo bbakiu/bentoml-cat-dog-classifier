@@ -1,6 +1,7 @@
 __pycache__/
 .ipynb_checkpoints/
 venv/
+venv2/
 PetImages/
 .DS_Store
 .vscode

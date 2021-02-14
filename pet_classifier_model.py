@@ -2,9 +2,7 @@ from keras import layers
 from keras import models
 from keras import optimizers
 from keras.preprocessing import image
-
 import os, shutil
-
 from keras.preprocessing.image import ImageDataGenerator
 from pet_classifier_bentoml import PetClassifier
 
@@ -12,22 +10,8 @@ train_dir = "PetImages/train"
 validation_dir = "PetImages/validation"
 train_cats_dir = "PetImages/train/cats"
 train_dogs_dir = "PetImages/train/dogs"
-# split_data_set()
+
 fnames = [os.path.join(train_cats_dir, fname) for fname in os.listdir(train_cats_dir)]
-
-
-# We pick one image to "augment"
-img_path = fnames[3]
-print(img_path)
-
-# Read the image and resize it
-img = image.load_img(img_path, target_size=(150, 150))
-
-# Convert it to a Numpy array with shape (150, 150, 3)
-x = image.img_to_array(img)
-
-# Reshape it to (1, 150, 150, 3)
-x = x.reshape((1,) + x.shape)
 
 datagen = ImageDataGenerator(
     rotation_range=40,
@@ -56,7 +40,6 @@ model.add(layers.Dense(1, activation="sigmoid"))
 model.compile(
     loss="binary_crossentropy", optimizer=optimizers.RMSprop(lr=1e-4), metrics=["acc"]
 )
-
 
 train_datagen = ImageDataGenerator(
     rescale=1.0 / 255,
