@@ -5,18 +5,18 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: iris-classifier
+      app: pet-classifier
   template:
     metadata:
       labels:
-        app: iris-classifier
+        app: pet-classifier
     spec:
       containers:
-      - name: iris-classifier
-        image: 081827876616.dkr.ecr.us-east-1.amazonaws.com/iris-classifier:latest
+      - name: pet-classifier
+        image: 081827876616.dkr.ecr.us-east-1.amazonaws.com/pet-classifier:latest
         resources:
           limits:
-            memory: "1Gi"
+            memory: "500Mi"
             cpu: "500m"
         ports:
         - containerPort: 5000
