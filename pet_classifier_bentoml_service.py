@@ -17,7 +17,7 @@ class PetClassifier(bentoml.BentoService):
 
         img_tensor = np.expand_dims(img_tensor, axis=0)
         img_tensor /= 255.0
-        
+
         prediction = self.artifacts.model.predict(img_tensor)
         value = prediction[0][0]
         if value > 0.5:
